@@ -1,0 +1,43 @@
+kreiranje modela:
+predavac 
+organizator +
+
+-ArchiveFlag prilikom upisa treba da bude 0,koristimo ga prilikom arhiviranja korisnika
+-Kapacitet sam dodao da bi nam lakse bilo prilikom da odredimo 
+da li je slusalac moze da se prijavi za predavanje
+
+
+----u feadback imamo koji slusalac je ostavio fidbek prema kom predavacu
+----u fidbek report imamo koji predavac je reportovao koji fidbek
+
+
+------------------------------------------------------------------------------------------------------------------
+predavanje kotroler:
+vrati:
+
+-vracati predavanja po oblasti                                                               --odradjeno  
+-vracati sva predavanja koja predstoje                                                       --odradjeno
+-vracati sva predavanja koja su prosla                                                       --odradjeno
+-vracati predavanja za odredjeni datum                                                       --odradjeno
+-vracati trenutna predavanja                                                                 --odradjeno
+-vracati predavanja izmedju ordedjenog datuma                                                --odradjeno
+-vracati sva predavanja vezana za jednog predavaca                                           --odradjeno
+-vracati predavanja koja su prosla,tj ciji je datum manji od trenuntnog za jednog predavaca  --odradjeno
+-vracati predavanja koja nailaze,tj ciji je datum veci od predhodnog za jednog predavaca     --odradjeno
+-vracati predavanja u odredjenoj sali trenuntno                 
+-vracati predavanja u odredjenoj sali predstojeca               
+
+dodaj:
+-dodaj predavanje
+
+azuriraj
+-azuriraj predavanje
+obrisi
+-obrisi predavanje
+
+------------------------------------------------------------------------------------------------------------------------
+
+predavac kotroler:
+-vrati predavaca po oblasti -slicno kao za predavanja po oblastti
+-
+

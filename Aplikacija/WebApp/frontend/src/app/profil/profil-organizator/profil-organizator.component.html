@@ -1,0 +1,50 @@
+<div class="background" *ngIf='organizator'>
+    <div class="dugmeDodaj">
+        <button *ngIf="this.authService?.userValue?.role==='Organizator' && this.authService?.userValue?.id===organizator.id" pButton pRipple type="button" (click)="dodajOrganizatora()" label="Dodaj organizatora" class="p-button-secondary mt-2"></button>
+    </div>
+    <div class="card" *ngIf="organizator">
+        <div class="card-container border-round">
+            <div class="podaci-div font-bold text-center p-4 mb-3 border-round">
+                <div class="flex slika">
+                    <p style="font-size: 48px;">{{organizator?.ime[0]}}{{organizator?.prezime[0]}}</p>
+                </div>
+                <div class="podaci-labele">
+                    <span class="prikaz-labela">
+                        <label class="pi pi-user"></label>
+                        <label>{{organizator.ime}} {{organizator.prezime}}</label>
+                    </span>
+                    <span class="prikaz-labela">
+                        <label class="pi pi-envelope"></label>
+                        <label>{{organizator.email}}</label>
+                    </span>
+                </div>
+            </div>
+            <button *ngIf="this.authService?.userValue?.role==='Organizator' && this.authService?.userValue?.id===organizator.id" pButton pRipple type="button" (click)="show()" label="Izmeni profil" class="p-button-secondary btn"></button>
+        </div>
+    
+        <div class="dodajPodatke border-round">
+            <h2>Dodaj podatke</h2>
+            <section class="forma grid p-4" [formGroup]="formoblast">
+                <span >
+                    <h3>Oblast</h3>
+                    <input class="w-full mt-2" placeholder="Oblast" formControlName="oblast" type="text" pInputText />
+                </span>
+                <span >
+                    <button *ngIf="this.authService?.userValue?.role==='Organizator' && this.authService?.userValue?.id===organizator.id" pButton pRipple type="button" (click)="dodajOblast()" label="Dodaj oblast" class="p-button-warning mt-2"></button>
+                </span>
+            </section>
+            <section class="forma grid p-4" [formGroup]="formzvanje">
+                <span >
+                    <h3>Zvanje</h3>
+                    <input class="w-full mt-2" placeholder="Zvanje" formControlName="zvanje" type="text" pInputText />
+                </span>
+                <span >
+                    <button *ngIf="this.authService?.userValue?.role==='Organizator' && this.authService?.userValue?.id===organizator.id" pButton pRipple type="button" (click)="dodajZvanje()" label="Dodaj zvanje" class="p-button-warning mt-2"></button>
+                </span>
+            </section>
+            </div>
+    </div>
+</div>
+
+
+

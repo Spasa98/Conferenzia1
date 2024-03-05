@@ -1,0 +1,32 @@
+<div class="card" >
+        <p-table [value]='reportF'  class="ptable">
+            <ng-template pTemplate="header" >
+                <tr >
+                    <th>Predavac</th>
+                    <th>Slusalac</th>
+                    <th>Datum</th>
+                    <th>Dozvoli feedback/Obrisi feedback</th>
+                    <th >Opis</th>
+                    
+                    
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-reports >
+                <tr>
+                    <td>{{reports.predavac}}</td>
+                    <td>{{reports.slusalac}}</td>
+                    <td>{{reports.datum}}  </td>
+                    <td >
+                        <i (click)="obradi(reports.reportid,0)" class="pi pi-times" style="font-size: 2rem" ></i>
+                        <i  (click)="obradi(reports.reportid,1)" class="pi pi-check" style="margin-left: 100px; font-size: 2rem" ></i>
+                    </td>
+                    <td>{{reports.opis}}</td>
+                    
+                    
+                </tr>
+            </ng-template>
+        </p-table>
+        <!-- <div style="display: flex;justify-content:center;">
+        <button *ngIf="reportF[0]&&reportF[0].kraj!='end'" style="align-self: center; border-radius: 5px; height: 40px; background-color: #111827;color: white;font-family: Arial, Helvetica, sans-serif;" (click)="loadMore()">Load more</button>
+        </div> -->
+</div>

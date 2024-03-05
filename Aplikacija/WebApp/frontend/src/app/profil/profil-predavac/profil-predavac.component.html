@@ -1,0 +1,41 @@
+<div class="card" *ngIf="predavac">
+    <div class="card-container">
+        <div class="podaci-div font-bold text-center p-4 border-round">
+            <div class="flex slika">
+                <p style="font-size: 48px;">{{predavac?.ime[0]}}{{predavac?.prezime[0]}}</p>
+            </div>
+            <div class="podaci-labele predavaci" >
+                <span class="prikaz-labela">
+                    <label class="pi pi-user"></label>
+                    <label>{{predavac.ime}} {{predavac.prezime}}</label>
+                </span>
+                <span class="prikaz-labela">
+                    <label class="pi pi-envelope"></label>
+                    <label>{{predavac.email}}</label>
+                </span>
+                <span class="prikaz-labela">
+                    <label class="pi pi-phone"></label>
+                    <label>{{predavac.telefon}}</label>
+                </span>
+                <span class="prikaz-labela">
+                    <label class="pi pi-building"></label>
+                    <label>{{predavac.grad}}</label>
+                </span>
+                <span class="prikaz-labela">
+                    <label class="pi pi-id-card"></label>
+                    <label>{{predavac.zvanje}}</label>
+                </span>
+                <span class="prikaz-labela">
+                    <label class="pi pi-tag"></label>
+                    <label>{{predavac.oblast}}</label>
+                </span>
+                <br/>
+                <textarea rows="5" cols="30" pInputTextarea>{{predavac.opis}}</textarea>
+                <div  style=" display:flex;flex-direction: row;"><label style="margin-top: 30px;" >Ocena: </label><p-rating [iconOnStyle]="{'color':'orange','cursor':'context-menu'}" [iconOffStyle]="{'color':'orange','cursor':'context-menu'}" [readonly]=true style="margin-top: 30px;" [cancel]="false" [(ngModel)]="predavac.ocena"></p-rating></div>
+            </div>
+        </div>
+        <button *ngIf="this.authService?.userValue?.role==='Predavac' && this.authService?.userValue?.id===predavac.id" pButton pRipple type="button" (click)="show()" label="Izmeni profil" class="p-button-secondary btn"></button>
+        <button *ngIf="this.odslusan" pButton pRipple type="button" (click)="OstaviFeedback(predavac.id)" label="Ostavi feedback" class="p-button-secondary btn"></button>
+    </div>
+</div>
+    

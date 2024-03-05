@@ -1,0 +1,80 @@
+<div class="sve" style="margin-top: 80px;">
+    <div class="glavna">
+        <div class="levo font-bold text-center p-4 border-round">
+            <app-profil-slusalac ></app-profil-slusalac>
+            
+        </div>
+        <div class="desno">
+            <div  *ngIf="predavanja[0]" class="listaPredavanja border-round">
+                <!-- ovo je dodato umesto kockica -->
+                <div class="p-1 flex justify-content-center mt-3">
+                    <h1 style="color: whiblackte;margin-bottom: o;"><i>Predstojeca predavanja</i></h1>
+                </div>
+                <!-- ovo je dodato umesto kockica -->
+                <div class="carda flex justify-content-center">
+                   
+                    <div *ngFor="let predavanje of predavanja" class="bod inline-flex flex flex-wrap text-black  card-container orange-container">
+                        <div class="predavanja cardea m-1 relative ">
+                              <div class="absolute  bottom-0 right-0 text-red text-blacknt-bold flex align-items-center justify-content-end w-15rem h-2rem border-round "></div>
+                            <h2>{{predavanje.naziv}}</h2>
+                            <p>{{predavanje.datum}}</p>
+                            <p>{{predavanje.vreme}}</p>
+                            <p>{{predavanje.sala}}</p>
+                            <p>{{predavanje.opis}}</p>
+                            <p>{{predavanje.pocetakPredavanja}}</p>
+                            
+                            
+                        </div>
+                        
+                    </div>
+                </div> 
+                <div class="paging">
+                    <p-paginator [rows]="3" [totalRecords]="brstrP" (onPageChange)="povecajP($event)"></p-paginator>
+                </div>
+            </div>
+            <div *ngIf="dalJeProfil" class=" listaFeedbacks border-round flex">
+                
+                
+                <div class="p-1 flex justify-content-end">
+                    <p-dropdown class=" m-2 " [options]="status" [(ngModel)]="selected" (onChange)="promena($event)" optionLabel="name" optionValue="code"></p-dropdown>
+                </div>
+                <!-- ovo je dodato umesto kockica -->
+                <div class="carda flex justify-content-center">
+                   
+                    <div  *ngFor="let zahtev of zahtevslusalac;" class="bod inline-flex flex flex-wrap text-black  card-container orange-container">
+                        <div class="predavanja cardea m-1 relative ">
+                              <div class="absolute  bottom-0 right-0 text-red text-blacknt-bold flex align-items-center justify-content-end w-15rem h-2rem border-round "> <i (click)="izbrisiZahtev(zahtev.id)" class="pi pi-times " style="font-size: 2rem"></i></div>
+                            <h2>{{zahtev.predavanje}}</h2>
+                            <p>{{zahtev.datum}}</p>
+                            
+                            
+                        </div>
+                        <div class="bottom-0 right-0 text-black justify-content-center align-items-center h-4rem ">
+                        </div>
+                    </div>
+                </div> 
+                <div class="paging">
+                    <p-paginator [rows]="3"   [totalRecords]="brstrZ" (onPageChange)="povecajZ($event)"></p-paginator>
+                </div>
+            
+            
+        </div>
+        </div>
+        
+    </div>
+    
+        
+</div>
+<!-- <div>
+<div *ngIf="authService?.userValue?.role==='Predavac'"  class="flex flex-column w-fit m-auto justify-content-center">
+    <div class="carda flex  justify-content-center"style="">
+        <div  *ngFor="let zahtevpredavac of zahtevpredavac.slice(0,5);" class="bod inline-flex flex flex-wrap">
+            <div class="cardea predavanja relative shadow-2  hover:surface-800 hover:shadow-8 m-1 flex-1 w-16rem h-16rem text-black font-bold text-center p-4"> -->
+
+
+   
+<!-- <div class="bod">
+    <div class="cardea">
+        <h2>Code Scientist</h2>
+        <p>Glassmorphic Card using CSS. Source code link in bio.</p>
+    </div>-->

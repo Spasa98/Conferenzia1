@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="grid font-bold p-4 border-round mx-4" [formGroup]="form">
+        <div class="podaci-div">
+            <span class="m-2">
+                <small class="block">Ime</small>
+                <input formControlName="ime" type="text" pInputText />
+            </span>
+            <span class="m-2">
+                <small class="block">Prezime</small>
+                <input formControlName="prezime" type="text" pInputText />
+            </span>
+            <span class="m-2">
+                <small class="block">Email</small>
+                <input formControlName="email" type="text" pInputText />
+            </span>
+            <span class="m-2">
+                <small class="block">Lozinka</small>
+                <p-password formControlName="lozinka" [feedback]="false"></p-password>
+            </span>
+        </div>
+        <span class="dugme-dodaj mt-3 ml-2">
+            <button pButton label="Dodaj" icon="pi pi-check-circle" button (click)="submit()"></button>
+        </span>
+    </div>
+</div>

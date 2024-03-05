@@ -1,0 +1,9 @@
+<div [formGroup]="form">
+    <span class="m-2">
+        <p class="block">Predavac</p>
+        <p-dropdown appendTo="body" class="card" formControlName="predavacID" [options]="predavaci" optionLabel="ime" optionValue="id" ></p-dropdown>
+    </span>
+    <span class="dugme-kreiraj mt-3 ml-2">
+        <button (click)="DodajPredavaca()" pButton label="Dodaj" icon="pi pi-check-circle" type="submit"></button>
+    </span>
+</div>

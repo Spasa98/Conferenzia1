@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="grid font-bold border-round" [formGroup]="form">
+        <div class="podaci-div">
+            <span class="m-2">
+                <small class="block">Ime</small>
+                <input formControlName="ime" type="text" pInputText />
+            </span>
+            <span class="m-2">
+                <small class="block">Prezime</small>
+                <input formControlName="prezime" type="text" pInputText />
+            </span>
+            <span class="m-2">
+                <small class="block">Telefon</small>
+                <input formControlName="telefon" type="number" pInputText />
+            </span>
+            <span class="m-2">
+                <small class="block">Email</small>
+                <input formControlName="email" type="text" pInputText />
+            </span>
+            <span class="m-2">
+                <small class="block">Lozinka</small>
+                <p-password formControlName="lozinka" [(ngModel)]="value1" [feedback]="false"></p-password>
+            </span>
+        </div>
+        <span class="dugme-dodaj mt-3">
+            <button pButton label="Registruj se" button (click)="reg()"></button>
+        </span>
+    </div>
+</div>

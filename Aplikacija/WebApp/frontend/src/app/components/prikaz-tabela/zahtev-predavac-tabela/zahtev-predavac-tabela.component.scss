@@ -1,0 +1,24 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    margin-bottom: 240px;
+}
+.tabelaZahtevPredavac {
+    width: 100%;
+    //width: fit-content;
+    //height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.dugmici {
+    width: 100%;
+    display: flex;
+    min-width: 400px;
+    float: left;
+    padding-left: 10px;
+}
+button {
+    margin: 0.5rem;
+}

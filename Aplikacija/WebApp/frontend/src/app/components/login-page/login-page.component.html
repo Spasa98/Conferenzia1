@@ -1,0 +1,24 @@
+<div class="pozadina">
+    <div class="okvir border-round">
+      <div class="naslov">
+        <h2>Prijavi se</h2>
+      </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="login">
+            <div class="login-field">
+              <label>Email</label>
+              <input class="polje" formControlName="email" type="text" pInputText />
+            </div>
+            <div class="login-field">
+              <label>Lozinka</label>
+              <p-password class="polje" formControlName="password" [feedback]="false"></p-password>
+            </div>
+            <button class="dugme-submit" pButton type="button" label="Prijavi se" (click)="onSubmit()"></button>
+          </div>
+          <div class="reg-field mt-5">
+            <label class="mt-5 mb-2 text-align-center">Nemate nalog? </label>
+            <label  class="font-bold cursor-pointer" (click)="onRegistration()"> Registruj se.</label>
+          </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="card">
+    
+    <div class="grid font-bold p-4 border-round" [formGroup]="form">
+        <div class="naslov">
+            <!-- <h3>Dodaj predavanje</h3> -->
+        </div>
+        <div class="podaci-div">
+            <span class="dvostruko">
+                <span class="m-2">
+                    <p class="block">Datum</p>
+                    <div class="field">
+                        <p-calendar formControlName="datum" [showTime]="true" [showSeconds]="false" inputId="time"></p-calendar>
+                    </div>
+                </span>
+                <span class="m-2">
+                    <p class="block">Naziv</p>
+                    <input formControlName="naziv" type="text" pInputText />
+                </span>
+            </span>
+            <span class="m-2">
+                <p class="block">Opis</p>
+                <textarea rows="5" cols="52" class="opis-input" formControlName="opis" pInputTextarea></textarea>
+            </span>
+             
+            <!-- PRIMER ZA KORISCENJE GRIDA <div class="grid">
+                <div class="col-12"></div>
+            </div> -->
+            <!-- <span class="m-2">
+                <small class="block">Broj zainteresovanih</small>
+                <input formControlName="brojZainteresovanih" type="number" pInputText />
+            </span> -->
+            <span class="dvostruko">
+                <span class="m-2">
+                    <p class="block">Sala</p>
+                    <p-dropdown formControlName="salaID" [options]="sale"  optionLabel="sala" optionValue="id"></p-dropdown>
+                </span>
+                <span class="m-2">
+                    <p class="block">Oblast</p>
+                    <p-dropdown formControlName="oblastID" [options]="oblasti"  optionLabel="oblast" optionValue="id"></p-dropdown>
+                </span>
+            </span>
+            <span class="m-2 checkicoba">
+                <p for="checkpredavac">Postoji predavac</p>
+                <input class="checkic" formControlName="pom" type="checkbox" name="isActive" id="checkpredavac">
+            </span>
+            <!--
+            <span class="m-2">
+                <p-checkbox [(ngModel)]="checked" binary="true" inputId="binary"></p-checkbox>
+                <label for="binary">{{checked}}</label>
+                <p-checkbox formControlName="cb" name="groupname" value="0" [(ngModel)]="selectedValues"></p-checkbox>
+            </span>
+            -->
+            <span class="m-2">
+                <p class="block">Predavac</p>
+                <p-dropdown formControlName="predavacID" [options]="predavaci" optionLabel="ime" optionValue="id" [disabled]="this.form.value.pom===false"></p-dropdown>
+            </span>
+            <span class="dugme-kreiraj mt-3 ml-2">
+                <button pButton label="Dodaj" icon="pi pi-check-circle" type="submit" button (click)="submit()"></button>
+            </span>
+        </div>
+    </div>
+</div>

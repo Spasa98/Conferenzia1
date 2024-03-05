@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="izmeni-predavanje-div font-bold p-4 border-round mx-4" [formGroup]="form">
+        <!-- <div class="naslov">
+            <h3>Izmeni predavanje</h3>
+        </div> -->
+        <div class="podaci-izmeni">
+            <span class="m-2">
+                <small class="block">Naziv</small>
+                <input formControlName="naziv" [placeholder]="predavanje?.naziv" type="text" pInputText />
+            </span>
+            <span class="m-2">
+                <small class="block">Opis</small>
+                <input formControlName="opis" [placeholder]="predavanje?.opis" type="text" pInputText />
+            </span>
+        </div>
+        <div class="podaci-izmeni">
+            <span class="m-2">
+                <small class="block">Datum</small>
+                    <p-calendar appendTo="body" formControlName="datum"  [showTime]="true" [showSeconds]="true" inputId="time"></p-calendar>
+            </span> 
+            <span class="m-2">
+                <small class="block">Predavac</small>
+                <p-dropdown appendTo="body" formControlName="predavacID" [options]="predavaci" [selected]="predavanje?.predavacID" optionLabel="ime" optionValue="id"></p-dropdown>
+            </span>
+        </div>
+        <div class="podaci-izmeni">
+            <span class="m-2">
+                <small class="block">Oblast</small>
+                <p-dropdown appendTo="body" formControlName="oblastID" [options]="oblasti"  optionLabel="oblast" optionValue="id"></p-dropdown>
+            </span>
+            <span class="m-2">
+                <small class="block">Sala</small>
+                <p-dropdown  appendTo="body" formControlName="salaID" [options]="sale" [selectId]="predavanje?.SalaID"  optionLabel="sala" optionValue="id"></p-dropdown>
+            </span>
+        </div>
+        <div class="podaci-izmeni">
+            <span class="dugme-dodaj mt-3 ml-2">
+                <button pButton label="Save changes" icon="pi pi-check" iconPos="right" button (click)="submit()"></button>
+            </span>
+        </div>
+    </div>
+</div> 

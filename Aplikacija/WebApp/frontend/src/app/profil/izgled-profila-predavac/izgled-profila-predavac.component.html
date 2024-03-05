@@ -1,0 +1,132 @@
+<div class="sve">
+    <div class="glavna">
+        <div class="levo font-bold text-center p-4 border-round">
+            <app-profil-predavac ></app-profil-predavac>
+        </div>
+        <div class="desno">
+            <div class="listaPredavanja border-round flex">
+
+                    <div class="p-1 flex justify-content-end">
+                        <p-dropdown class=" m-2 " [options]="sort" [(ngModel)]="selected" (onChange)="promena($event)" optionLabel="name" optionValue="code"></p-dropdown>
+                        </div>
+                    <!-- ovo je dodato umesto kockica -->
+                    <div class="carda flex justify-content-center">
+                       
+                        <div  *ngFor="let predavanje of predavanje.slice(0,3);" class="bod inline-flex flex flex-wrap text-black  card-container orange-container">
+                            <div class="predavanja cardea m-1 relative ">
+                                  <div *ngIf="logovaniPredavac==true && selected==0"  class="tooltip absolute  bottom-0 right-0 text-red text-blacknt-bold flex align-items-center justify-content-end w-15rem h-2rem border-round "><span class="tooltiptext">Posalji zahtev za odjavu</span>&nbsp;&nbsp;&nbsp;<i class="cursor-pointer  pi pi-times " (click)="postNoviZahtev(predavanje,'odjava')" style="font-size: 2rem"></i> </div>
+                                  <div *ngIf="logovaniPredavac==true && selected==1"  class="tooltip absolute  bottom-0 right-0 text-red text-blacknt-bold flex align-items-center justify-content-end w-15rem h-2rem border-round "><span class="tooltiptext">Posalji zahtev za prijavu</span>&nbsp;&nbsp;&nbsp;<i class="cursor-pointer pi pi-send " (click)="postNoviZahtev(predavanje,'priajva')" style="font-size: 2rem"></i> </div>
+                                <h2>{{predavanje.naziv}}</h2>
+                                <p>{{predavanje.datum}}</p>
+                                <p>{{predavanje.pocetakPredavanja}} - {{predavanje.krajPredavanja}}</p>
+                                <p>{{predavanje.oblast}}</p>
+                                <p>{{predavanje.sala}}</p>
+
+                                
+                            </div>
+
+                            <div class="bottom-0 right-0 text-black justify-content-center align-items-center h-4rem ">
+
+                            </div>
+
+                        </div>
+
+                    </div> 
+
+                    <div class="paging">
+
+                        <p-paginator #p [rows]="3" [totalRecords]="100" (onPageChange)="povecaj($event)"></p-paginator>
+
+                    </div>
+
+                
+
+                
+
+            </div>
+
+            <h3 *ngIf="logovaniPredavac==true" class="ml-5">zahtevi predavaca</h3>
+
+            <div *ngIf="logovaniPredavac==true"  class="listaFeedbacks border-round">
+
+                <!-- ovo je dodato umesto kockica -->
+
+                <div class="p-1 flex justify-content-end">
+
+                    <!-- <p-dropdown class=" m-2 " [options]="sort"  (onChange)="promena($event)" optionLabel="name" optionValue="code"></p-dropdown> -->
+
+                    </div>
+
+                <!-- ovo je dodato umesto kockica -->
+
+                <div class="carda flex justify-content-center">
+
+                   
+
+                    <div *ngFor="let zahtevpredavac of zahtevpredavac.slice(0,3);" class="bod inline-flex flex flex-wrap text-black  card-container orange-container">
+
+                        <div class="predavanja cardea m-1 relative "  [class.bg-green-400]="zahtevpredavac.text === 'odobren'" [class.bg-red-400]="zahtevpredavac.text === 'odbijen'">
+
+                            <div *ngIf="logovaniPredavac==true && zahtevpredavac.status=='neobradjen'"  class="tooltip absolute  bottom-0 right-0 text-red text-blacknt-bold flex align-items-center justify-content-end w-15rem h-2rem border-round "><span class="tooltiptext">obrisi zahtev</span>&nbsp;&nbsp;&nbsp;<i class="cursor-pointer  pi pi-trash " (click)="deleteZahtev(zahtevpredavac)" style="font-size: 2rem"></i> </div>
+
+                              <h2>{{zahtevpredavac.status}}</h2>
+
+                              <p>{{zahtevpredavac.predavanje}}</p>
+
+                              <p>{{zahtevpredavac.datum}}</p>
+
+                              <h2>{{zahtevpredavac.vreme}}</h2>
+
+                              <h2>{{zahtevpredavac.text}}</h2>
+
+                            
+
+                        </div>
+
+                        <div class="bottom-0 right-0 text-black justify-content-center align-items-center h-4rem ">
+
+                        </div>
+
+                    </div>
+
+                </div> 
+
+                <div class="paging">
+
+                    <p-paginator [rows]="3" [totalRecords]="100" (onPageChange)="povecajZahtev($event)"></p-paginator>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction:column;flex:1 1 auto;">
+        <div class="aaa border-round">
+            <h2 style="padding-top: 20px;align-self: center;box-shadow: 0px 24px 11px -24px gray;">Feedbacks<br><br></h2>
+                <div  *ngFor="let feedback of feedback" class="comment">
+
+                    <div class="profil">
+
+                        <div [routerLink]="['/profilslusaoca', feedback.slusalacid]" class="slikaNaziv"><div class="flex slika" style="font-size: 20px;cursor:pointer;">{{feedback?.ime[0]}}{{feedback?.prezime[0]}}</div><label style="cursor:pointer;">{{feedback.ime}} </label><label style="cursor:pointer;"> {{feedback.prezime}}</label></div>
+
+                        <p  style="align-self: flex-start; right: 0;">{{feedback.datum}} </p>
+
+                    </div>
+
+                    <p-rating [iconOnStyle]="{'color':'orange','cursor':'context-menu'}" [iconOffStyle]="{'color':'orange','cursor':'context-menu'}"  [(ngModel)]="feedback.ocena" [readonly]=true [cancel]="false"></p-rating>
+
+                    <!-- <img src="../../../assets/zelqjko.jpg" alt="{{feedback?.ime[0]}}{{feedback?.prezime[0]}}"> -->
+
+                        <p style="padding-top: 10px;word-wrap: break-word;inline-size: 100%;"> {{feedback.opis}} </p>
+                        <label style="margin-top:20px;color:red;" *ngIf="feedback.tip==1"><i>Reported feedback</i></label>
+                        
+                        <button *ngIf="dalJeProfil&&feedback.tip==0" pButton pRipple type="button" (click)="reportFeedback(feedback.id)" label="Report feedback" class="p-button-secondary w-13rem"></button>
+                        <!-- <button pButton  *ngIf="dalJeProfil&&feedback.tip==0" (click)="reportFeedback(feedback.id)"style="margin-top: 10px;width: 170px;" >Report feedback</button> -->
+                    <div class="bottom-0 right-0 text-black justify-content-center align-items-center h-2rem ">
+                    </div>
+                </div>
+        </div>
+
+        <button *ngIf="feedback[0]&&feedback[0].kraj!='end'" pButton pRipple type="button" (click)="loadMore()" label="Prikaži više" class="p-button-secondary btn w-15rem"></button>
+        <!-- <button *ngIf="feedback[0]&&feedback[0].kraj!='end'" style="align-self: center; border-radius: 5px; height: 40px; background-color: #111827;color: white;font-family: Arial, Helvetica, sans-serif;" (click)="loadMore()">Load more</button> -->
+
+    </div>

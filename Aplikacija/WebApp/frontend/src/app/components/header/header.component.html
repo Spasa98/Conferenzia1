@@ -1,0 +1,30 @@
+<p-menubar class="header" [model]="items">
+    <ng-template pTemplate="start">
+        <img src="assets/images/logo.png" height="60px" class="mr-2 ml-2">
+    </ng-template>
+
+    <ng-template 
+    
+    pTemplate="end">
+        <button class="dugmic" (click)="onClick()" *ngIf="authService?.userValue?.role==='Predavac' 
+                                                    ||   authService?.userValue?.role==='Organizator'
+                                                    ||   authService?.userValue?.role==='Slusalac'"
+        pButton label="Logout"></button>
+        <button class="dugmicProfil" [routerLink]="['/profilorganizatora',authService?.userValue?.id]"
+                type="button" icon="pi pi-user" class="p-button-rounded ml-2"
+                *ngIf="authService?.userValue?.role==='Organizator'"
+        pButton pRipple></button>
+        <button class="dugmicProfil" [routerLink]="['/profil/me',authService?.userValue?.id]"
+                type="button" icon="pi pi-user" class="p-button-rounded ml-2"
+                *ngIf="authService?.userValue?.role==='Predavac'"
+        pButton pRipple></button>
+        <button class="dugmicProfil" [routerLink]="['profil/slusalac',authService?.userValue?.id]"
+                type="button" icon="pi pi-user" class="p-button-rounded ml-2"
+                *ngIf="authService?.userValue?.role==='Slusalac'"
+        pButton pRipple></button>
+        <button (click)="onLogin()" [routerLink]="['/login']" *ngIf="authService?.userValue?.role!=='Predavac' &&
+                                                                     authService?.userValue?.role!=='Organizator' &&
+                                                                     authService?.userValue?.role!=='Slusalac'"
+        pButton label="Login"></button>
+    </ng-template>
+</p-menubar>

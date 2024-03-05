@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="grid font-bold p-4 border-round mx-4" [formGroup]="form">
+        <div class="naslov mb-2">
+            <h3>Dodaj feedback predavacu</h3>
+        </div>
+        <div class="podaci-div">
+            
+            <!--<div class="radioDugmici">
+                <div class="field-radiobutton">
+                    <p-radioButton formControlName="tip" name="tip" value="pozitivan" [(ngModel)]="tip" inputId="pozitivan"></p-radioButton>
+                    <label for="pozitivan">Pozitivan</label>
+                </div>
+                <div class="field-radiobutton">
+                    <p-radioButton formControlName="tip" name="tip" value="negativan" [(ngModel)]="tip" inputId="negativan"></p-radioButton>
+                    <label for="negativan">Negativan</label>
+                </div>
+            </div>-->
+            <span class="m-2">
+                <p class="block mb-2">Opis</p>
+                <textarea rows="5" cols="30" class="opis-input" formControlName="opis" pInputTextarea></textarea>
+            </span>
+            <!--<span class="m-2">
+                <small class="block">Predavac</small>
+                <p-dropdown formControlName="predavacID" [options]="predavaci" [(ngModel)]="selectedPredavacId" optionLabel="ime" optionValue="id"></p-dropdown>
+            </span>-->
+            
+            <span class="m-2">
+                <p class="block">Ocena</p>
+                <span class="ocena"><p-rating formControlName="ocena" [(ngModel)]="val1"></p-rating></span>
+            </span>
+            <span class="dugme-dodaj mt-3 ml-2">
+                <button pButton label="Dodaj" icon="pi pi-check-circle" button (click)="submit()"></button>
+            </span>
+        </div>
+    </div>
+</div>
+

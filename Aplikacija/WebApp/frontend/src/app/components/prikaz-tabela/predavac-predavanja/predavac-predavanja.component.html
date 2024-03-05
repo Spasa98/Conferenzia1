@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="tabelapredavanja">
+        <p-table [value]='predavanje'>
+            <ng-template pTemplate="header" >
+                <tr>
+                    <th>Naziv</th>
+                    <th>Opis</th>
+                    <th>Sala</th>
+                    <th>Datum</th>
+                    <th>Pocetak predavanja</th>
+                    <th>Kraj predavanja</th>
+                    <th><form  >
+                        <label class="radio-inline">
+                            <input class="form-check-input" type="radio" [(ngModel)]="pre" name="aa" value="Proslih"  (change)="radnja(pre)"/>Odslusana
+                          </label><br>
+                          <label class="radio-inline"> 
+                            <input class="form-check-input" type="radio" [(ngModel)]="posle" name="aa" value="Predstojecih" (change)="radnja(posle)" />Predostojeca
+                          </label>
+            
+                      </form></th>
+                </tr>
+            </ng-template>
+            <p>{{predavanje}}</p>
+            <ng-template pTemplate="body" let-predavanja>
+                <tr>
+                    <td>{{predavanja.naziv}}</td>
+                    <td>{{predavanja.opis}}</td>
+                    <td>{{predavanja.sala}}</td>
+                    <td>{{predavanja.datum}}</td>
+                    <td>{{predavanja.pocetakPredavanja}}</td>
+                    <td>{{predavanja.krajPredavanja}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+        
+    </div>
+</div>

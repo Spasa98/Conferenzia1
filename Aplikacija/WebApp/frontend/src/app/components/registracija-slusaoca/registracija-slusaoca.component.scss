@@ -1,0 +1,28 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    //border: 1px solid rgb(100, 100, 100);
+    //box-shadow: 0 30px 40px rgba(0,0,0,.2);
+
+    .podaci-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+.naslov {
+    align-content: center;
+    align-self: center;
+}
+.dugme-dodaj {
+    align-self: center;
+}

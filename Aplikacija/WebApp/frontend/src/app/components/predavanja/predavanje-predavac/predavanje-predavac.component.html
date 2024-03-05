@@ -1,0 +1,59 @@
+<!-- 
+<div class="bckg overflow-show">
+    <div class="card">
+        <div  *ngFor="let predavanje of predavanje.slice(0,5);" class="inline-flex flex flex-wrap  card-container orange-container">
+            <div class="cursor-pointer relative shadow-2 hover:bg-yellow-500 hover:shadow-8 flex-1 m-2 w-20rem h-20rem  text-white font-bold text-center p-4 border-round" [class.bg-gray-400]="predavanje.oblast === 'Sport'" [class.bg-green-400]="predavanje.oblast === 'Voćarstvo'">
+                <div class="absolute bottom-0 right-0 text-white font-bold flex align-items-center justify-content-center w-4rem h-4rem border-round"><i class="pi pi-chevron-circle-up algin-self-flex-end" style="font-size: 2rem"></i></div>
+                <h2>{{predavanje.naziv}}</h2>
+                <p>{{predavanje.predavac}}</p>
+                <p>{{predavanje.sala}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div  *ngFor="let predavanje of predavanje.slice(5,10);" class="inline-flex flex flex-wrap  card-container orange-container" >
+            <div class="cursor-pointer relative shadow-2 hover:bg-yellow-500 hover:shadow-8 m-2 flex-1 w-20rem h-20rem  text-white font-bold text-center p-4 border-round" [class.bg-gray-400]="predavanje.oblast === 'Sport'" [class.bg-green-400]="predavanje.oblast === 'Voćarstvo'">
+                <div class="absolute bottom-0 right-0 text-white font-bold flex align-items-center justify-content-center w-4rem h-4rem border-round"><i class="pi pi-chevron-circle-up algin-self-flex-end" style="font-size: 2rem"></i></div>
+                <h2>{{predavanje.naziv}}</h2>
+                <p>{{predavanje.predavac}}</p>
+                <p>{{predavanje.sala}}</p>
+            </div>
+        </div>
+    </div>
+    <p-paginator [rows]="10" [totalRecords]="100" (onPageChange)="povecak($event)" ></p-paginator>
+</div> -->
+
+<div class="prikaz">
+    <span class="p-input-icon-left">
+        <i class="pi pi-search cursor-pointer" (click)="pretrazi()" ></i>
+        <input type="text" pInputText placeholder="Search" [(ngModel)]="value3" />
+    </span>
+    <div class="card flex-wrap justify-content-center align-items-center">
+        <div *ngFor="let predavanje of predavanje.slice(0,predavanje.length);" class="inline-flex flex-wrap">
+            <div class="carda relative shadow-2 hover:bg-yellow-300 hover:shadow-8 flex-1 w-25rem h-20rem text-white font-bold text-center border-round" [class.bg-gray-400]="predavanje.oblast === 'Sport'" [class.bg-green-200]="predavanje.oblast === 'Voćarstvo'">
+                
+                <img class="cover" src="../../../assets/images/predavanje1.png" alt="Cover image">
+                    <div class="unutrasnjost">
+                        <h2>{{predavanje.naziv}}</h2>
+                        <p>{{predavanje.datum}}</p>
+                        <p>{{predavanje.sala}}</p>
+                    </div>
+                    <div  class="unutrasnjost-predavac">
+                        <p>{{predavanje.predavac}}</p>
+                    </div>
+                    <div class="absolute bottom-0 right-0 text-white font-bold flex align-items-center justify-content-center w-4rem h-4rem border-round">
+                            <i (click)="show(predavanje.id,predavanje.predavac)" class="pi pi-chevron-circle-up algin-self-flex-end" style="font-size: 2rem">
+                            </i>
+                    </div>
+                    <div class="absolute text-white font-bold flex align-items-center justify-content-center w-4rem h-4rem border-round">
+                        
+                    </div> 
+            </div>
+        </div>
+    </div>
+    <button [disabled]="disableMoreButton" class=" mt-4 mr-2" pButton type="button" (click)="showmoree()" label="prikazi vise" ></button>
+</div>
+
+
+
+

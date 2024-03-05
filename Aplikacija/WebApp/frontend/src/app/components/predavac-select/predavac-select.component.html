@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="dugmici m-2 flex justify-content-end">
+        <button class="mr-2" (click)="dodajPredavaca()" pButton type="button" label="Dodaj predavaca" ></button>
+    </div>
+    <div class="tabelapredavac">
+        <p-table [value]="predavac" >
+            <ng-template pTemplate="header" style="width: 100%;">
+                <tr>
+                    <th>ID</th>
+                    <th>Ime i prezime</th>
+                    <th>Email</th>
+                    <th>Opis</th>
+                    <th>Telefon</th>
+                    <th>Oblast</th>
+                    <th>Profil</th>
+                    <th>Akcije</th>
+                </tr>
+            </ng-template>
+            <ng-template  pTemplate="body" let-predavaci style="width: 100%;">
+                <tr>
+                    <td>{{predavaci.id}}</td>
+                    <td>{{predavaci.ime}}</td>
+                    <td>{{predavaci.email}}</td>
+                    <td>{{predavaci.opis}}</td>
+                    <td>{{predavaci.telefon}}</td>
+                    <td>{{predavaci.oblast}}</td>
+                    <td>
+                        <i  [routerLink]="['/profil', predavaci.id]"  class="cursor-pointer pi pi-user">&nbsp;</i>
+                    </td>
+                    <td>
+                        <i  (click)="obirisPredavaca(predavaci.id)" class="cursor-pointer pi pi-trash">&nbsp;</i>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <p-paginator [rows]="10" [totalRecords]="100" (onPageChange)="povecaj($event)" ></p-paginator>
+</div>
+

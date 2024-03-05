@@ -1,0 +1,59 @@
+<div class="card relative flex p-2">
+    <div class="flex card-container blue-container overflow-show">
+        <div class="absolute flex-none flex align-items-center justify-content-start  font-bold text-white m-2 border-round">
+            <p-dropdown class=" m-2 " [options]="datumi" [(ngModel)]="selectedFP" (onChange)="proslapredstojeca($event)" optionLabel="name" optionValue="code"></p-dropdown>
+        </div>
+        <div class="flex-grow-1 flex align-items-center justify-content-end  font-bold text-white m-2  border-round">
+            <div class="flex justify-content-end">
+                <p-dropdown class=" m-2 " [options]="sort" [(ngModel)]="selected" (onChange)="promena($event)" optionLabel="name" optionValue="code"></p-dropdown>
+                <button class="mr-2" pButton type="button" (click)="show()" label="Dodaj predavanje" ></button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="">
+        
+    <div class=" ">
+        <p-table class=""[value]="predavanje" >
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Naziv</th>
+                    <th>Oblast</th>
+                    <th>Opis</th>
+                    <th>Predavac</th>
+                    <th>Sala</th>
+                    <th>Datum</th>
+                    <th>Pocetak predavanja</th>
+                    <th>Kraj predavanja</th>
+                    <th>Akcija</th>
+                    <th>Ukloni/Dodaj predavaca</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-predavanja>
+                <tr>
+                    <td>{{predavanja.naziv}}</td>
+                    <td>{{predavanja.oblast}}</td>
+                    <td>{{predavanja.opis}}</td>
+                    <td>{{predavanja.predavac}}</td>
+                    <td>{{predavanja.sala}}</td>
+                    <td>{{predavanja.datum}}</td>
+                    <td>{{predavanja.pocetakPredavanja}}</td>
+                    <td>{{predavanja.krajPredavanja}}</td>
+                    <td> 
+                        <i (click)="IzmeniPredavanje(predavanja.id,predavanja.predavac)" class="cursor-pointer pi pi-pencil">&nbsp;</i>
+                        <i  (click)="deletePredavanje(predavanja)" class="cursor-pointer pi pi-trash">&nbsp;</i>
+                    </td>
+                    <td>
+                        <i (click)="Ukloni(predavanja.id)" *ngIf="predavanja.predavac!=' '" class="cursor-pointer pi pi-minus">&nbsp;</i>
+                        <i (click)="DodajPredavacaNaPredavanje(predavanja.id)"  *ngIf="predavanja.predavac==' '" class="cursor-pointer pi pi-plus">&nbsp;</i>
+                    </td>
+                        
+                </tr>
+            </ng-template>
+        </p-table>
+        
+    </div>
+    
+    <p-paginator #p [rows]="10" [totalRecords]="pomo" (onPageChange)="povecaj($event)" ></p-paginator>
+</div>
+</div>

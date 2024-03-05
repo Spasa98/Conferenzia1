@@ -1,0 +1,61 @@
+
+// .bckg {
+//     margin-top: 80px;
+// }
+.prikaz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px;
+    justify-content: center;
+    margin-bottom: 150px;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.kocka {
+    background-color: rgb(236, 188, 140);
+    margin: 2rem;
+    background-image: src;
+    //background-image: url("../../assets/images/cover2.png");
+    // content:url('https://upload.wikimedia.org/wikipedia/commons/a/ac/WHATWG_URL_logo.svg');
+}
+.carda {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background-color: rgb(236, 188, 140);
+    margin: 2rem;
+}
+
+.carda {
+    height: 100%;
+    width: 100%;
+}
+
+.cover {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    height: 100%;
+    width: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+.unutrasnjost {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.unutrasnjost-predavac {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+}

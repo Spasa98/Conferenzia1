@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    margin-bottom: 120px;
+}
+.homeimagediv {
+    margin-bottom: 100px;
+}
+.home-image {
+    width: 100%;
+}
+.podaci {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: inherit;
+}
+.ppp {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.tekst {
+    display: flex;
+    flex-shrink: 2;
+    flex-basis: 500px;
+    font-size: 24px;
+    margin: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+.img1, .img2, .img3 {
+    max-width: 350px;
+    max-height: 200px;
+}
+
+@media (max-width:405px){
+    .img1, .img2, .img3 {
+        max-width: 219px;
+        max-height: 125px;
+    }
+    .tekst {
+        font-size: 20px;
+    }
+}

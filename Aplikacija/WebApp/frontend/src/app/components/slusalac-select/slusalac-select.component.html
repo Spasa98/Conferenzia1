@@ -1,0 +1,28 @@
+<div class="card">
+   
+    <div class="tabelaslusalac" >
+        <p-table [value]="slusalac" style="width:100%;">
+            <ng-template pTemplate="header">
+                <tr style="align-content: center;">
+                    <th >ID</th>
+                    <th>Ime i prezime</th>
+                    <th>Email</th>
+                    <th>Telefon</th>
+                    <th>Obrisi</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-slusaoci>
+                <tr>
+                    <td [routerLink]="['/profilslusaoca', slusaoci.id]">{{slusaoci.id}}</td>
+                    <td [routerLink]="['/profilslusaoca', slusaoci.id]">{{slusaoci.ime}}</td>
+                    <td [routerLink]="['/profilslusaoca', slusaoci.id]">{{slusaoci.email}}</td>
+                    <td [routerLink]="['/profilslusaoca', slusaoci.id]">{{slusaoci.telefon}}</td>
+                    <td >
+                        <i (click)="obrisi(slusaoci.id)" class="cursor-pointer pi pi-trash center">&nbsp;</i>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <p-paginator [rows]="10" [totalRecords]="brstr" (onPageChange)="povecaj($event)" ></p-paginator>
+</div>

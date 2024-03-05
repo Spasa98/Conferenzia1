@@ -1,0 +1,26 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    //border: 1px solid rgb(100, 100, 100);
+    //box-shadow: 0 30px 40px rgba(0,0,0,.2);
+    .naslov {
+        align-self: flex-start;
+    }
+    .podaci-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+/*textarea {
+    resize: none;
+}*/

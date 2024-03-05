@@ -1,0 +1,49 @@
+/* ====================================
+*                MIXINS
+======================================= */
+
+/**
+* * Responsive
+*/
+@mixin xs {
+    @media (max-width: 575.98px) {
+      @content;
+    }
+}
+
+  @mixin sm {
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      @content;
+    }
+  }
+  @mixin md {
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      @content;
+    }
+  }
+  @mixin lg {
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      @content;
+    }
+  }
+  @mixin z-150 {
+    @media (min-width: 1200px) and (max-width: 1280px) {
+      @content;
+    }
+  }
+  @mixin z-125 {
+    @media (min-width: 1200px) and (max-width: 1536.98px) {
+      @content;
+    }
+  }
+  @mixin xl {
+    @media (min-width: 1200px) and (max-width: 3000px) {
+      @content;
+    }
+  }
+  @mixin xxl {
+    @media (min-width: 1600px) and (max-width: 3000px) {
+      @content;
+    }
+  }
+  

@@ -1,0 +1,23 @@
+<div *ngIf="predavanje" class="card">
+    <div  *ngFor="let predavanje of predavanje.slice(0,10);" class="pojedinacno">
+            <!-- [class.bg-gray-400]="predavanje.oblast === 'Sport'" [class.surface-700]="predavanje.oblast === 'Voćarstvo' -->
+                
+            <h2>{{predavanje.naziv}}</h2>
+            <p>{{predavanje.predavac}}</p>
+            <p>{{predavanje.datum}}</p>
+            <p>{{predavanje.pocetakPredavanja}}</p>
+            <p>{{predavanje.opis}}</p>
+            <p>{{predavanje.sala}}</p>
+            <p>Popunjena mesta:{{predavanje.brzahteva}}/{{predavanje.kapacitet}}</p>
+            <div class="prijava">
+            <p *ngIf="predavanje.brzahteva<predavanje.kapacitet" style="margin-top: 20px;"><b>Posalji zahtev za prijavu:&nbsp;&nbsp;&nbsp;</b></p>
+                <p *ngIf="!(predavanje.brzahteva<predavanje.kapacitet)" style="margin-top: 20px;"><b>Nedovoljno mesta&nbsp;&nbsp;&nbsp;</b></p>
+                <i *ngIf="!(predavanje.brzahteva<predavanje.kapacitet)" class=" pi pi-times"  style="font-size: 2rem"></i>
+                <i *ngIf="predavanje.brzahteva<predavanje.kapacitet" class="cursor-pointer pi pi-send"  style="font-size: 2rem" (click)="saljiZahtev(predavanje.id,$event)"></i>
+                </div>
+            </div>
+</div>
+
+<p-paginator [rows]="10" [totalRecords]='predavanje[0]?.brstrana' (onPageChange)="povecaj($event)" ></p-paginator>
+
+

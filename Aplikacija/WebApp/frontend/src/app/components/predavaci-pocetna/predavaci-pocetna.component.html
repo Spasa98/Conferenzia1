@@ -1,0 +1,35 @@
+
+<div class="prikaz">
+    <span class="p-input-icon-left">
+        <i class="pi pi-search cursor-pointer" (click)="pretrazi()" ></i>
+        <input type="text" pInputText placeholder="Search" [(ngModel)]="value3" />
+    </span>
+    <div class="card flex-wrap justify-content-center align-items-center">
+        <div  *ngFor="let predavaci of predavac2.slice(0,predavac2.length);" class="inline-flex flex-wrap">
+            <div class="flex-1 text-center ">
+               
+                <div class="carda flex-1 w-18rem h-18rem border-round">        
+                    <!-- <img src="../../../assets/persons/user.jpg" alt=""> -->
+                    <img src="../../../assets/persons/{{predavaci.ime}}.jpg" onerror="this.src='../../../assets/persons/user.jpg'">
+                    <!-- <img src="../../../assets/darko-milicic-foto-vlalic-8-1024x683-1.jpg" *ngIf="predavaci.ime==='Darko Milicic' "alt=""> -->
+       
+                    <div class="details ">
+                        <h4>Conferenzia</h4>
+                        <br/>
+                        <ul class="social-icons">
+                                <button pButton type="button" icon="pi pi-user" [routerLink]="['/profil', predavaci.id]" class="p-button-raised p-button-rounded" style="background-color: rgb(133, 133, 133);"></button>
+                        </ul>
+                        <br/>
+                        <h2>{{predavaci.ime}}</h2>
+                    </div>
+                    <p>{{predavaci.oblast}}</p>
+                    <p>{{predavaci.opis}}</p>
+                    <p>{{predavaci.telefon}}</p>
+                    <p>{{predavaci.email}}</p>
+                </div>
+                <h2 class="bg-gray-200 m-2 p-1">{{predavaci.ime}}</h2>
+            </div>
+        </div>
+    </div>
+    <button [disabled]="disableMoreButton" class=" mt-4 mr-2" pButton type="button" (click)="show()" label="prikazi vise" ></button>
+</div>

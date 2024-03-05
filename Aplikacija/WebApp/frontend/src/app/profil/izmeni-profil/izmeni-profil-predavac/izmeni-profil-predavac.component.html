@@ -1,0 +1,116 @@
+<!-- <div class="card" *ngIf="predavac">
+    <div class="izmeni-profil-div font-bold border-round" [formGroup]="form">
+        <div class="podaci-izmeni">
+            <span class="m-2">
+                <small class="block">Ime</small>
+                <input placeholder="{{predavac[0].ime}}" value="{{predavac[0].ime}}" formControlName="ime" type="text" pInputText />
+            </span>
+            <span class="m-2">
+                <small class="block">Prezime</small>
+                <input placeholder="{{predavac[0].prezime}}" formControlName="prezime" type="text" pInputText />
+            </span>
+        </div>
+        <div class="podaci-izmeni">
+            <span class="m-2">
+                <small class="block">Telefon</small>
+                <input [placeholder]="predavac[0].telefon" formControlName="telefon"  type="tel"  pInputText />
+            </span>
+            <span class="m-2">
+                <small class="block">Grad</small>
+                <input placeholder="{{predavac[0].grad}}" formControlName="grad" type="text" pInputText />
+            </span>
+        </div>
+        <div class="podaci-izmeni">
+            <span class="m-2">
+                <small class="block">Opis</small>
+                <textarea rows="4" cols="52" [placeholder]="predavac[0].opis" formControlName="opis"  type="tel" pInputTextarea></textarea>
+            </span>
+        </div>
+        <div class="podaci-izmeni">
+            <span class="m-2">
+                <small class="block">Email</small>
+                <input [placeholder]="predavac[0].email" formControlName="email" type="text" pInputText />
+                    
+                  
+            </span>
+            <span class="m-2">
+                <small class="block">Lozinka</small>
+                <input placeholder="password" formControlName="lozinka" type="password" pInputText />
+            </span>
+        </div>
+        <div class="podaci-izmeni">
+            <span class="dugme-izmeni mt-3 ml-2">
+                <button pButton label="Save changes" icon="pi pi-check" iconPos="right" button (click)="submit()"></button>
+            </span>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="card" *ngIf="predavac">
+    <section class="grid" [formGroup]="form">
+        <div class="col-12 sm:col-6">
+            <span class=" block">
+                <small class="block">Ime</small>
+                <input class="w-full" placeholder="{{predavac[0].ime}}" value="{{predavac[0].ime}}" formControlName="ime" type="text" pInputText />
+            </span>
+        </div>
+        <div class="col-12 sm:col-6">
+            <span class=" block">
+                <small class="block">Prezime</small>
+                <input class="w-full" placeholder="{{predavac[0].prezime}}" formControlName="prezime" type="text" pInputText />
+            </span>
+        </div>
+        <div class="col-12 sm:col-6">
+            <span class=" block">
+                <small class="block">Telefon</small>
+                <input class="w-full" [placeholder]="predavac[0].telefon" formControlName="telefon"  type="tel"  pInputText />
+            </span>
+        </div>
+        <div class="col-12 sm:col-6">
+            <span class=" block">
+                <small class="block">Grad</small>
+                <input class="w-full" placeholder="{{predavac[0].grad}}" formControlName="grad" type="text" pInputText />
+            </span>
+        </div>
+        <div class="col-12">
+            <span class=" block">
+                <small class="block">Opis</small>
+                <textarea class="w-full" [placeholder]="predavac[0].opis" formControlName="opis"  type="tel" pInputTextarea></textarea>
+            </span>
+        </div>
+        <div class="col-12 sm:col-6">
+            <span class=" block">
+                <small class="block">Email</small>
+                <input class="w-full" [placeholder]="predavac[0].email" formControlName="email" type="text" pInputText />
+            </span>
+        </div>
+        <div class="col-12 sm:col-6">
+            <span class=" block">
+                <small class="block">Lozinka</small>
+                <input class="w-full" placeholder="password" formControlName="lozinka" type="password" pInputText />
+            </span>
+        </div>
+        <div class="col-12">
+            <span class="dugme-izmeni mt-3">
+                <button pButton label="Izmeni" icon="pi pi-check" iconPos="right" button (click)="submit()"></button>
+            </span>
+        </div>
+    </section>
+    <!-- <div class="izmeni-profil-div font-bold border-round" >
+
+        <div class="podaci-izmeni">
+
+        </div>
+        <div class="podaci-izmeni">
+
+        </div>
+        <div class="podaci-izmeni">
+
+
+        </div>
+        <div class="podaci-izmeni">
+
+        </div>
+    </div> -->
+</div>

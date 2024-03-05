@@ -1,0 +1,23 @@
+<div class="card" *ngIf="predavanje">
+    <div class="podaci">
+        <h4>Naziv predavanja</h4>
+        <p>{{predavanje.naziv}}</p>
+        <h4>Datum odrzavanja</h4>
+        <p>{{predavanje.datum}}</p>
+        <h4>Vreme pocetka</h4>
+        <p>{{predavanje.pocetakPredavanja}}</p>
+        <h4>Oblast</h4>
+        <p>{{predavanje.oblast}}</p>
+        <h4>Opis</h4>
+        <p>{{predavanje.opis}}</p>
+        <h4 *ngIf="this.config?.data?.predavacime!==' '">
+            Predavac:
+        </h4>
+        <p *ngIf="this.config?.data?.predavacime!==' '">
+            {{predavanje.predavac}}
+        </p>
+        <h4>Broj slusaoca</h4>
+        <p>{{predavanje.brslusaoca}}/{{predavanje.kapacitet}}</p>
+        <p *ngIf="predavanje.kapacitet<=predavanje.brslusaoca" style="color: red; font-style:italic">Predavanje je popunjeno.</p>
+    </div>
+</div>

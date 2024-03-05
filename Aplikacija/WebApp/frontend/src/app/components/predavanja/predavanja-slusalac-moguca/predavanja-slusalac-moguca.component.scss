@@ -1,0 +1,34 @@
+.card
+{
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+p,h2,i:hover{
+    cursor: context-menu;
+}
+p{margin-top: 4px;}
+.pojedinacno{
+    flex-wrap: nowrap;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: rgba(140, 245, 42, 0.25);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 30px;
+    width: 17rem;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    color: black;
+}
+.prijava{
+    display: flex;
+    align-items: center;
+}
+i{
+    padding-top: 20px;
+    padding-right: 10px;
+}

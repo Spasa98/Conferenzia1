@@ -1,0 +1,173 @@
+
+.sve {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+   
+    flex: 1 1 auto;
+}
+.glavna {
+    justify-content: center;
+    display: flex;
+    flex-direction: row ;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+}
+.levo {
+    
+    border: 1px solid black;
+    margin: 2rem;
+    margin-right: 0;
+    flex: 1 1 auto;
+    max-width: 500px;
+}
+.desno {
+    display: flex;
+    flex-direction: column;
+    flex: 2 1 auto;
+}
+
+.listaPredavanja {
+    flex-grow: 1;
+
+    border: 1px solid black;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .prikaz {
+        display: flex;
+    }
+}
+.listaFeedbacks {
+    background-color: rgb(255, 255, 255);
+    flex-grow: 1;
+    margin: 2rem;
+    margin-top: 0;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .prikaz {
+        display: flex;
+    }
+}
+
+
+.carda{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+}
+.bod {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+}
+
+.cardea {
+    background: rgb(167, 166, 166);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 30px;
+    width: 16rem;
+    height: 18rem;
+    
+}
+//===========COMMENTS
+.aaa{
+    border: 1px solid black;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex:1 1 auto;
+    margin: 30px;
+    flex-wrap: wrap;
+    
+}
+.comment{
+    box-shadow: 0px 24px 3px -24px gray;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex:1 1 auto;
+    padding-left: 1rem;
+}
+.profil{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding-bottom: 8px;
+    flex:1 1 auto;
+    
+.slikaNaziv{
+    
+    display: flex;
+    align-items: center;
+    flex:0 1 auto;
+    justify-content: space-around;
+}
+label{
+    margin-left: 4px;
+    flex:1 1 auto;
+}
+.slika {
+    flex:1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    background-color: rgb(212, 173, 253);
+    border: 2px solid black;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    text-align: center;
+    
+}
+.ime{
+    flex:1 1 auto;
+    padding-top: 3px;
+}
+}
+@media only screen and (max-width: 1306px) { 
+    .levo{
+        
+        margin-right: 2rem;
+}}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+
+
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    margin: 2px;
+
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .btn {
+    align-self: center;
+  }
+

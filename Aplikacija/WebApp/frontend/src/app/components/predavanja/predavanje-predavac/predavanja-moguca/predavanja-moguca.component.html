@@ -1,0 +1,31 @@
+<div class="bckg">
+    <div class="card flex justify-content-center"style="">
+        <div  *ngFor="let predavanje of predavanje.slice(0,5);" class="inline-flex flex flex-wrap  card-container orange-container">
+            <div class="predavanja relative shadow-2  hover:surface-800 hover:shadow-8 m-1 flex-1 w-16rem h-16rem  text-white font-bold text-center p-4 border-round border-3">
+                <!-- [class.bg-gray-400]="predavanje.oblast === 'Sport'" [class.surface-700]="predavanje.oblast === 'Voćarstvo' -->
+                <div class="tooltip absolute bottom-0 right-0 text-white font-bold flex align-items-center justify-content-center w-15rem h-4rem border-round "><span class="tooltiptext p=1">Posalji zahtev za prijavu</span>&nbsp;<i class="cursor-pointer pi pi-send algin-self-flex-end" (click)="postNoviZahtev(predavanje)" style="font-size: 2rem"></i></div>
+                <h2>{{predavanje.naziv}}</h2>
+                <p>{{predavanje.predavac}}</p>
+                <p>{{predavanje.datum}}</p>
+                <p>{{predavanje.pocetakPredavanja}}</p>
+                <p>{{predavanje.oblast}}</p>
+                <p>{{predavanje.sala}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="card flex justify-content-center">
+        <div  *ngFor="let predavanje of predavanje.slice(5,10);" class="inline-flex flex flex-wrap  card-container orange-container" >
+            <div class="predavanja relative shadow-2  hover:surface-800 hover:shadow-8 m-1 flex-1 w-16rem h-16rem  text-white font-bold text-center p-4 border-round border-3">
+                <div class=" absolute bottom-0 right-0 text-white font-bold flex align-items-center justify-content-center w-15rem h-4rem border-round "><span class="tooltiptext">Tooltip text</span><i class="tooltip cursor-pointer pi pi-send algin-self-flex-end" (click)="postNoviZahtev(predavanje)" style="font-size: 2rem"></i></div>
+                <p class="font-bold">{{predavanje.naziv}}</p>
+                <p>{{predavanje.predavac}}</p>
+                <p>{{predavanje.datum}} {{predavanje.pocetakPredavanja}}</p>
+                <p> </p>
+                <p>{{predavanje.oblast}}</p>
+                <p>{{predavanje.sala}}</p>
+            </div>
+        </div>
+    </div>
+    <p-paginator [rows]="10" [totalRecords]="120" (onPageChange)="povecak($event)" ></p-paginator>
+</div>
+

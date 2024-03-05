@@ -1,0 +1,41 @@
+<div class="card" *ngIf="slusalac">
+    <div class="izmeni-profil-div font-bold border-round" [formGroup]="form">
+        <!-- <div class="naslov">
+            <h3>Izmeni profil</h3>
+        </div> -->
+        <div class="podaci-izmeni">
+            <span class="m-2">
+                <small class="block">Ime</small>
+                <input  placeholder="{{slusalac[0].ime}}" value="{{slusalac[0].ime}}" formControlName="ime" type="text" pInputText />
+            </span>
+            <span class="m-2">
+                <small class="block">Prezime</small>
+                <input placeholder="{{slusalac[0].prezime}}" formControlName="prezime" type="text" pInputText />
+            </span>
+        </div>
+        <div class="podaci-izmeni">
+            <span class="m-2">
+                <small class="block">Telefon</small>
+                <input [placeholder]="slusalac[0].telefon" formControlName="telefon"  type="tel"  pInputText />
+            </span>
+        </div>
+        <div class="podaci-izmeni">
+            <span class="m-2">
+                <small class="block">Email</small>
+                <input [placeholder]="slusalac[0].email" formControlName="email" type="text" pInputText />
+                    
+                    <!-- <label class="text-danger" *ngIf="form.get('email').errors?.email">Email address is invalid</label> -->
+                  
+            </span>
+            <span class="m-2">
+                <small class="block">Lozinka</small>
+                <input placeholder="password" formControlName="lozinka" type="password" pInputText />
+            </span>
+        </div>
+        <div class="podaci-izmeni">
+            <span class="dugme-dodaj mt-3 ml-2">
+                <button pButton label="Izmeni" icon="pi pi-check" iconPos="right" button (click)="submit()"></button>
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="card" *ngIf="slusalac">
+        <div class="podaci-div font-bold text-center p-4 border-round">
+            <div class="flex slika">
+                <p style="font-size: 48px;">{{slusalac.ime[0]}}{{slusalac.prezime[0]}}</p>
+            </div>
+            <div class="podaci-labele slusaoci">
+                <span class="prikaz-labela">
+                    <label class="pi pi-user"></label>
+                    <label>{{slusalac.ime}} {{slusalac.prezime}}</label>
+                </span>
+                <span class="prikaz-labela">
+                    <label class="pi pi-envelope"></label>
+                    <label>{{slusalac.email}}</label>
+                </span>
+                <span class="prikaz-labela">
+                    <label class="pi pi-phone"></label>
+                    <label>{{slusalac.telefon}}</label>
+                </span>
+            </div>
+        </div>
+        <button *ngIf="this.authService?.userValue?.role==='Slusalac' && this.authService?.userValue?.id===slusalac.id" pButton pRipple type="button" (click)="show()" label="Izmeni profil" class="p-button-secondary btn"></button>
+    </div>

@@ -1,0 +1,23 @@
+.card {
+    margin-top: 80px;
+    margin-bottom: 240px;
+    
+}
+.tabelapredavac {
+    width: 100%;
+    //height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    margin-top: 65px;
+}
+.dugmici {
+    width: 100%;
+    display: flex;
+    min-width: 400px;
+    float: left;
+    padding-left: 10px;
+}
+button {
+    margin: 0.5rem;
+}

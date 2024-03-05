@@ -1,0 +1,40 @@
+<div class="card">
+    <div class="grid font-bold p-4 border-round mx-4" [formGroup]="form">
+        <div class="naslov">
+            <h3>Dodaj predavaca</h3>
+        </div>
+        <div class="podaci-div">
+            <span class="m-2">
+                <small class="block">Ime</small>
+                <input formControlName="ime" type="text" pInputText />
+            </span>
+            <span class="m-2">
+                <small class="block">Prezime</small>
+                <input formControlName="prezime" type="text" pInputText />
+            </span>
+            <span class="m-2">
+                <small class="block">Grad</small>
+                <input formControlName="grad" type="text" pInputText />
+            </span>
+            <span class="m-2">
+                <small class="block">Telefon</small>
+                <input formControlName="telefon" type="text" pInputText />
+            </span>
+            <span class="m-2">
+                <small class="block">Opis</small>
+                <textarea rows="4" cols="23" class="opis-input" formControlName="opis" pInputTextarea></textarea>
+            </span>
+            <span class="m-2">
+                <small class="block">Oblast</small>
+                <p-dropdown formControlName="oblastId" [options]="oblasti" [(ngModel)]="selectedOblastId" optionLabel="oblast" optionValue="id"></p-dropdown>
+            </span>
+            <span class="m-2">
+                <small class="block">Zvanje</small>
+                <p-dropdown formControlName="zvanjeId" [options]="zvanja" [(ngModel)]="selectedZvanjeId" optionLabel="name" optionValue="id"></p-dropdown>
+            </span>
+        </div>
+        <span class="dugme-dodaj mt-3 ml-2">
+            <button pButton label="Dodaj" icon="pi pi-check-circle" button (click)="submit()"></button>
+        </span>
+    </div>
+</div>

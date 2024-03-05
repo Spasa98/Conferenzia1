@@ -1,0 +1,35 @@
+.card
+{
+    // background-color:#000B29;
+    background-color: #000B29;
+}
+.bckg {
+    margin-top: 80px;
+    margin-bottom: 19rem;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    margin: 2px;
+
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  .tooltiptext
+  {
+    padding: 4px;
+  }
